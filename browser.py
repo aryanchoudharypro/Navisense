@@ -2,19 +2,16 @@ from PyQt6.QtCore import QUrl
 from process_html import processHTML
 import os
 from PyQt6.QtWidgets import QMessageBox
-def checkLoadStatus(window,is_loaded):
+def checkLoadStatus(window,is_loaded,webview):
     if not is_loaded:
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Icon.Critical)
-        msg.setWindowTitle("Unable to load page:")
-        msg.setText("the page that you are looking for could not be loaded...")
-        msg.setInformativeText("""
-        The location that you have entered either doesn't exist or wrong URL/file Path.
-        Please recheck and try again...
-        Otherwise, contact to file/website owner.
-        """)
-        msg.setStandardButtons(QMessageBox.standardButton.Ok)
-        msg.exec()
+        QMessageBox.critical(
+            window,
+            "Enable to load page",
+            "Sorry, the page could not be loaded... Please recheck the location and try again.",
+        )
+        return
+    processHTML(is_loaded,webview)
+
 
 def updateAddressBoxURL(address_bar,changed_url):
     address_bar.setText(changed_url.toString())
@@ -31,5 +28,4 @@ def loadBrowser(url,webview):
             url = "http://" + url
 
     webview.load(QUrl(url))
-    webview.page().toHtml(processHTML)
 

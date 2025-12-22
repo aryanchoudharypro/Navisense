@@ -1,0 +1,17 @@
+# Ignore AI test file
+test_ai.py
+
+# Ignore OpenAI API key files
+openai_api_key.txt
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore virtual environment (if any)
+venv/
+.env/
+
+# Ignore IDE files
+.idea/
+.vscode/

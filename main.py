@@ -12,8 +12,9 @@ def startApp():
     webview = QWebEngineView()
     toolbar, address_bar = (addressBox(lambda url: loadBrowser(url, webview)))
     webview.urlChanged.connect(lambda changed_url: updateAddressBoxURL(address_bar,changed_url))
-    webview.loadFinished.connect(lambda is_loaded: checkLoadStatus(window,is_loaded))
+    webview.loadFinished.connect(lambda is_loaded: checkLoadStatus(window,is_loaded,webview))
     window.addToolBar(toolbar)
+    window.setCentralWidget(webview)
     window.show()
     sys.exit(app.exec())
 if __name__ == "__main__":
