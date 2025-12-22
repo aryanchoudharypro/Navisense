@@ -1,4 +1,4 @@
-from PyQt6.QtCore import QUrl
+from PyQt6.QtCore import QUrl, Qt
 from process_html import processHTML
 import os
 from PyQt6.QtWidgets import QMessageBox
@@ -10,6 +10,8 @@ def checkLoadStatus(window,is_loaded,webview):
             "Sorry, the page could not be loaded... Please recheck the location and try again.",
         )
         return
+    webview.setFocus()
+    webview.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
     processHTML(is_loaded,webview)
 
 

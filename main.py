@@ -1,10 +1,12 @@
 import sys
+import os
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 from toolbar import addressBox
 from browser import loadBrowser, updateAddressBoxURL, checkLoadStatus
 
 def startApp():
+    os.environ["QT_ACCESSIBILITY"] = "1"
     app = QApplication(sys.argv)
     window = QMainWindow()
     window.setWindowTitle("NaviSense")
