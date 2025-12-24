@@ -17,6 +17,9 @@ def checkLoadStatus(window,is_loaded,webview):
 
 def updateAddressBoxURL(address_bar,changed_url):
     address_bar.setText(changed_url.toString())
+    if "welcome.html" in changed_url.toString():
+        address_bar.clear()
+
 
 def loadBrowser(url,webview):
     url = url.lower()
@@ -28,6 +31,5 @@ def loadBrowser(url,webview):
     else:
         if not url.startswith("http"):
             url = "http://" + url
-
     webview.load(QUrl(url))
 

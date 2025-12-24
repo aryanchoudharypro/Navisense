@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Welcome to Navisense</title>
+
+<style>
+    .editable-box {
+    width: 100%;
+    height: 380px;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 8px;
+    background-color: #111;
+    color: #f1f1f1;
+    outline: none;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.editable-box:focus {
+    outline: 2px solid #4aa3ff;
+}
+
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-top: 20px;
+    }
+
+    .note {
+        font-size: 14px;
+        opacity: 0.9;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 380px;
+        resize: none;
+        padding: 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background-color: #111;
+        color: #f1f1f1;
+    }
+
+    textarea:focus {
+        outline: 2px solid #4aa3ff;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+        opacity: 0.8;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Welcome to Navisense</h1>
+    <p class="note">
+        An AI-powered accessibility-first browser designed especially for screen reader users.
+    </p>
+
+<div
+  class="editable-box"
+  contenteditable="true"
+  aria-readonly="true"
+  aria-label="Navisense welcome information"
+  tabindex="0"
+>
+Navisense is an experimental accessibility-focused browser that improves the usability of websites for visually impaired users using Artificial Intelligence.
+
+What Navisense does:
+• Scans web pages after loading
+• Detects accessibility issues automatically
+• Fixes unlabeled buttons, inputs, and controls
+• Improves screen reader announcements
+• Allows live accessibility adjustments without reloading pages
+
+How to get started:
+1. Type a website address in the address bar and press Enter.
+2. Use the Accessibility menu to:
+   - Toggle password visibility
+   - Enable or disable dark mode
+   - Adjust text size
+3. Navigate using standard keyboard keys.
+   (Browse Mode may be limited due to embedded browser constraints.)
+
+Important accessibility note:
+This content is presented inside an editable reading area so that screen readers like NVDA can read it correctly even when browse mode is unavailable.
+
+Navisense is a research and learning project created to explore how AI can improve real-world web accessibility.
+</div>
+    <div class="footer">
+        © Navisense Project — Accessibility First
+    </div>
+</div>
+</body>
+</html>
