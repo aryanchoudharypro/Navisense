@@ -15,3 +15,7 @@ venv/
 # Ignore IDE files
 .idea/
 .vscode/
+
+#ignore build files and directories
+dist/
+build/
