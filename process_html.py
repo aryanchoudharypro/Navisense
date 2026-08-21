@@ -21,10 +21,10 @@ html:
         input = prompt
     )
     js_code = response.output_text
-    webview.page().runJavaScript(js_code)
+    webview.RunScript(js_code)
 
 def processHTML(is_loaded,webview):
     if not is_loaded:
         return
-    webview.page().toHtml(lambda html_code: sendToAI(html_code,webview))
-
+    html_code = webview.GetPageSource()
+    sendToAI(html_code,webview)

@@ -13,7 +13,7 @@ def toggalPasswordFields(checked, webview):
         }
     });
     """ % ("'text'" if checked else "'password'")
-    webview.page().runJavaScript(js)
+    webview.RunScript(js)
 
 def toggalDarkMode(checked, webview):
     js = """
@@ -54,7 +54,7 @@ def toggalDarkMode(checked, webview):
         }
     })();
     """ % ("true" if checked else "false")
-    webview.page().runJavaScript(js)
+    webview.RunScript(js)
 
 
 def setFontSize(percent, webview):
@@ -63,4 +63,4 @@ def setFontSize(percent, webview):
         document.documentElement.style.fontSize = '{percent}%';
     }})();
 """
-    webview.page().runJavaScript(js)
+    webview.RunScript(js)
